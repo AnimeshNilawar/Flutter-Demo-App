@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "969288485113",
+    "project_id": "fir-flutter-app-e6a2f",
+    "storage_bucket": "fir-flutter-app-e6a2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969288485113:android:1773b5c8e3545844103a28",
+        "android_client_info": {
+          "package_name": "com.dialiax.demo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969288485113-ebppssu3cpmhg49roiafbf8657kgj5et.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dialiax.demo_app",
+            "certificate_hash": "a65b7d2ca543a88ef1470e0c6a7da87fbc4557c3"
+          }
+        },
+        {
+          "client_id": "969288485113-sigutq3avs40lopcbs3828q16p8kmu2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVrfz_hW9TRCi48ExSNmjJ8dgQ0jcn65o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969288485113-sigutq3avs40lopcbs3828q16p8kmu2s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "969288485113-utdrkmbokedum5on79iql90jub6vppln.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dialiax.demoApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
