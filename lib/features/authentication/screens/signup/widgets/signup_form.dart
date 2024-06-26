@@ -28,7 +28,8 @@ class SIgnUpWidget extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.firstName,
-                  validator: (value) => DemoValidator.validateEmptyText('First Name', value) ,
+                  validator: (value) =>
+                      DemoValidator.validateEmptyText('First Name', value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: DemoTexts.firstName,
@@ -39,7 +40,8 @@ class SIgnUpWidget extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
-                  validator: (value) => DemoValidator.validateEmptyText('Last Name', value) ,
+                  validator: (value) =>
+                      DemoValidator.validateEmptyText('Last Name', value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: DemoTexts.lastName,
@@ -53,7 +55,8 @@ class SIgnUpWidget extends StatelessWidget {
           /// UserName
           TextFormField(
             controller: controller.userName,
-            validator: (value) => DemoValidator.validateEmptyText('UserName', value),
+            validator: (value) =>
+                DemoValidator.validateEmptyText('UserName', value),
             expands: false,
             decoration: const InputDecoration(
                 labelText: DemoTexts.username,
@@ -65,11 +68,10 @@ class SIgnUpWidget extends StatelessWidget {
           /// Email
           TextFormField(
             controller: controller.email,
-            validator: (value) => DemoValidator.validateEmail(value) ,
+            validator: (value) => DemoValidator.validateEmail(value),
             expands: false,
             decoration: const InputDecoration(
-                labelText: DemoTexts.email,
-                prefixIcon: Icon(Iconsax.direct)),
+                labelText: DemoTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
 
           const SizedBox(height: DemoSizes.spaceBtwInputFields),
@@ -77,24 +79,29 @@ class SIgnUpWidget extends StatelessWidget {
           /// Phone Number
           TextFormField(
             controller: controller.phoneNumber,
-            validator: (value) => DemoValidator.validatePhoneNumber(value) ,
+            validator: (value) => DemoValidator.validatePhoneNumber(value),
             expands: false,
             decoration: const InputDecoration(
-                labelText: DemoTexts.phoneNo,
-                prefixIcon: Icon(Iconsax.call)),
+                labelText: DemoTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
 
           const SizedBox(height: DemoSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(
-            controller: controller.password,
-            validator: (value) => DemoValidator.validatePassword(value) ,
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: DemoTexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => DemoValidator.validatePassword(value),
+              expands: false,
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: DemoTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                  icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                ),
+              ),
             ),
           ),
 
@@ -117,4 +124,3 @@ class SIgnUpWidget extends StatelessWidget {
     );
   }
 }
-

@@ -15,11 +15,13 @@ class DemoFullScreenLoader {
           color: DemoHelperFunctions.isDarkMode(Get.context!) ? DemoColors.dark : DemoColors.white,
           width: double.infinity,
           height: double.infinity,
-          child: Column(
-            children: [
-              const SizedBox(height: 250),
-              DemoAnimationLoaderWidget(text: text, animation: animation,),
-            ],
+          child: SingleChildScrollView(  // Add this
+            child: Column(
+              children: [
+                const SizedBox(height: 250),
+                DemoAnimationLoaderWidget(text: text, animation: animation,),
+              ],
+            ),
           ),
         ),
       ),

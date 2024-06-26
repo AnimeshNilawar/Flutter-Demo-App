@@ -24,28 +24,17 @@ class DemoAnimationLoaderWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation,
-              width: MediaQuery.of(context).size.width * 0.8),
+          Lottie.asset(animation, width: MediaQuery.of(context).size.width * 0.8),
           const SizedBox(height: DemoSizes.defaultSpace),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-          ),
+          Text(text, style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center,),
           const SizedBox(height: DemoSizes.defaultSpace),
           showAction
               ? SizedBox(
                   width: 250,
                   child: OutlinedButton(
                     onPressed: onActionPressed,
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: DemoColors.dark),
-                    child: Text(
-                      actionText!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .apply(color: DemoColors.light),
+                    style: OutlinedButton.styleFrom(backgroundColor: DemoColors.dark),
+                    child: Text(actionText!, style: Theme.of(context).textTheme.bodyMedium!.apply(color: DemoColors.light),
                     ),
                   ),
                 )

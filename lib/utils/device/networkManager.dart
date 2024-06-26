@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:demo_app/utils/popups/loaders.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:demo_app/utils/popups/full_screen_loader.dart';
@@ -16,18 +17,14 @@ class NetworkManager extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
   }
 
   /// update the connection status based on changes in connectivity and show a relevant popup for no internet connection
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
-    if (result == ConnectivityResult.none) {
-      DemoFullScreenLoader.openLoadingDialog(
-          'No internet connection', 'assets/animations/no_internet.json');
-    } else {
-      DemoFullScreenLoader.stopLoading();
+    if (_connectionStatus.value == ConnectivityResult.none) {
+      DemoLoaders.warningSnackBar(title: 'No Internet Connection');
     }
   }
 
